@@ -7,11 +7,20 @@
       See more <i class="fa-solid fa-chevron-right"></i>
     </p>
   </div>
-  <div class="grid justify-between gap-[100px] grid-cols-4">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+  <div
+    *ngIf="movies.length > 0"
+    class="grid justify-between gap-[100px] grid-cols-4"
+  >
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <img src="{{ slide.img }}" alt="" width="100%" />
+      </div>
+    </ngx-slick-carousel>
+    <app-card *ngFor="let movie of movies" [movie]="movie"></app-card>
   </div>
 </div>
 <div class="mx-24 mt-20">
