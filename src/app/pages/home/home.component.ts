@@ -14,5 +14,5 @@ export class HomeComponent {
       this.movies = results;
     });
   }
-  // slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
+  slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
 }
