@@ -1,20 +1,25 @@
-<div class="mt-10 mx-24 mb-32 grid grid-flow-col gap-8">
+<div *ngIf="movie" class="mt-10 mx-24 mb-32 grid grid-flow-col gap-8">
   <div class="w-full">
-    <img src="../../../assets/image/Poster1.png" alt="" class="w-full h-full" />
+    <img
+      src="http://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+      alt=""
+      class="w-full h-4/5"
+    />
   </div>
   <div class="font-mono">
-    <h1 class="font-bold text-4xl mb-2">Stranger Things</h1>
-    <p>Release Date: October 15, 1999</p>
-    <p class="mb-2">Genre: Action, Adventure, Drama</p>
+    <h1 class="font-bold text-4xl mb-2">{{ movie.title }}</h1>
+    <p>Release Date: {{ movie.release_date }}</p>
+    <p class="mb-2">Thể loại: {{ movie.genres[0].name }}</p>
     <p class="mb-2">
-      In this provocative drama co-starring Brad Pitt and Edward Norton and
-      directed by David Fincher, a disaffected man and his charismatic friend
-      organize brutal, bare-knuckle boxing matches.
+      Overview:
+      {{ movie.overview }}
     </p>
     <h2 class="font-bold text-lg">Directed By</h2>
     <p class="mb-2">David Fincher</p>
-    <h2 class="font-bold text-lg">Produced By</h2>
-    <p class="mb-2">Art Linson, Ceán Chaffin, Ross Grayson</p>
+    <h2 class="font-bold text-lg">production_companies</h2>
+    <p class="mb-2">
+      {{ movie.spoken_languages[0].name }}
+    </p>
     <h2 class="font-bold text-lg">Cast</h2>
     <p>
       Dierdre Downing Jackson, Van Quattro, Bennie E. Moore, Andi Carnick,
@@ -39,10 +44,10 @@
       See more <i class="fa-solid fa-chevron-right"></i>
     </p>
   </div>
-  <div class="grid justify-between gap-[100px] grid-cols-4">
+  <div>
+    <!-- <app-card></app-card>
     <app-card></app-card>
     <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    <app-card></app-card> -->
   </div>
 </div>

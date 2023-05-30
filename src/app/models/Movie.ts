@@ -12,3 +12,21 @@ export interface Movie {
   backdrop_path: string;
   vote_count: string;
 }
+export interface MovieDetails extends Movie {
+  genres: [
+    {
+      name: string;
+      id: number;
+    }
+  ];
+  production_companies: [
+    {
+      name: string;
+    }
+  ];
+  spoken_languages: [
+    {
+      name: string;
+    }
+  ];
+}

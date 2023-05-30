@@ -8,6 +8,7 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { ContentComponent } from '../components/content/content.component';
 import { CastComponent } from '../components/cast/cast.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CastComponent } from '../components/cast/cast.component';
     ContentComponent,
     CastComponent,
   ],
-  imports: [CommonModule, RouterModule],
+
+  imports: [CommonModule, RouterModule, SlickCarouselModule],
   exports: [
     HomeComponent,
     DetailComponent,
