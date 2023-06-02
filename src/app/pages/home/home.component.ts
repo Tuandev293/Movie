@@ -24,4 +24,10 @@ export class HomeComponent {
     this.movieServiceSubscription.unsubscribe();
   }
   slideConfig = { slidesToShow: 5, slidesToScroll: 5 };
+  slidesBanner = {
+    slidesToShow: 1,
+    slideToScroll: 1,
+    prevArrow: false,
+    nextArrow: false,
+  };
 }

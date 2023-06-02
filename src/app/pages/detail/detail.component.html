@@ -1,53 +1,62 @@
-<div *ngIf="movie" class="mt-10 mx-24 mb-32 grid grid-flow-col gap-8">
-  <div class="w-full">
-    <img
-      src="http://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
-      alt=""
-      class="w-full h-4/5"
-    />
+<div *ngIf="movie">
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slidesBanner"
+  >
+    <app-slides ngxSlickItem [movie]="movie"></app-slides>
+  </ngx-slick-carousel>
+  <div *ngIf="movie" class="mt-10 mx-24 mb-32 grid grid-flow-col gap-8">
+    <div class="w-full">
+      <img
+        src="http://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+        alt=""
+        class="w-full h-4/5"
+      />
+    </div>
+    <div class="font-mono">
+      <h1 class="font-bold text-4xl mb-2">{{ movie.title }}</h1>
+      <p>Release Date: {{ movie.release_date }}</p>
+      <p class="mb-2">Thể loại: {{ movie.genres[0].name }}</p>
+      <p class="mb-2">
+        Overview:
+        {{ movie.overview }}
+      </p>
+      <h2 class="font-bold text-lg">Directed By</h2>
+      <p class="mb-2">David Fincher</p>
+      <h2 class="font-bold text-lg">production_companies</h2>
+      <p class="mb-2">
+        {{ movie.spoken_languages[0].name }}
+      </p>
+      <h2 class="font-bold text-lg">Cast</h2>
+      <p>
+        Dierdre Downing Jackson, Van Quattro, Bennie E. Moore, Andi Carnick,
+        Charlie Dell, Robby Robinson, Rachel Singer, Tim De Zarn, Peter
+        Iacangelo, Richmond Arquette, Stuart Blumberg, Todd Peirce, Valerie
+        Bickford, Anderson Bourell, Christopher John Fields, Carl Ciarfalio,
+        Joon B. Kim, Lou Beatty Jr., Michael Shamus Wiles, Robert J. Stephenson,
+        Scotch Ellis Loring, Sydney Colston, Thom Gossom Jr., Tyrone R.
+        Livingston, W. Lauren Sanchez, David Lee Smith
+      </p>
+      <button
+        class="w-40 bg-rose-700 h-9 rounded-md uppercase font-bold font-mono text-sm text-white"
+      >
+        <i class="fa-solid fa-circle-play"></i> Watch trailer
+      </button>
+    </div>
   </div>
-  <div class="font-mono">
-    <h1 class="font-bold text-4xl mb-2">{{ movie.title }}</h1>
-    <p>Release Date: {{ movie.release_date }}</p>
-    <p class="mb-2">Thể loại: {{ movie.genres[0].name }}</p>
-    <p class="mb-2">
-      Overview:
-      {{ movie.overview }}
-    </p>
-    <h2 class="font-bold text-lg">Directed By</h2>
-    <p class="mb-2">David Fincher</p>
-    <h2 class="font-bold text-lg">production_companies</h2>
-    <p class="mb-2">
-      {{ movie.spoken_languages[0].name }}
-    </p>
-    <h2 class="font-bold text-lg">Cast</h2>
-    <p>
-      Dierdre Downing Jackson, Van Quattro, Bennie E. Moore, Andi Carnick,
-      Charlie Dell, Robby Robinson, Rachel Singer, Tim De Zarn, Peter Iacangelo,
-      Richmond Arquette, Stuart Blumberg, Todd Peirce, Valerie Bickford,
-      Anderson Bourell, Christopher John Fields, Carl Ciarfalio, Joon B. Kim,
-      Lou Beatty Jr., Michael Shamus Wiles, Robert J. Stephenson, Scotch Ellis
-      Loring, Sydney Colston, Thom Gossom Jr., Tyrone R. Livingston, W. Lauren
-      Sanchez, David Lee Smith
-    </p>
-    <button
-      class="w-40 bg-rose-700 h-9 rounded-md uppercase font-bold font-mono text-sm text-white"
-    >
-      <i class="fa-solid fa-circle-play"></i> Watch trailer
-    </button>
-  </div>
-</div>
-<div class="mx-24 mb-32">
-  <div class="flex justify-between mb-11">
-    <h1 class="font-bold font-mono text-4xl">Recommend Movies</h1>
-    <p class="font-mono font-normal text-rose-700 text-lg">
-      See more <i class="fa-solid fa-chevron-right"></i>
-    </p>
-  </div>
-  <div>
-    <!-- <app-card></app-card>
+  <div class="mx-24 mb-32">
+    <div class="flex justify-between mb-11">
+      <h1 class="font-bold font-mono text-4xl">Recommend Movies</h1>
+      <p class="font-mono font-normal text-rose-700 text-lg">
+        See more <i class="fa-solid fa-chevron-right"></i>
+      </p>
+    </div>
+    <div>
+      <!-- <app-card></app-card>
     <app-card></app-card>
     <app-card></app-card>
     <app-card></app-card> -->
+    </div>
   </div>
 </div>

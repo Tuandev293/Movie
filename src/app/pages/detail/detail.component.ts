@@ -24,4 +24,10 @@ export class DetailComponent {
         console.log(this.movie);
       });
   }
+  slidesBanner = {
+    slidesToShow: 1,
+    slideToScroll: 1,
+    prevArrow: false,
+    nextArrow: false,
+  };
 }
