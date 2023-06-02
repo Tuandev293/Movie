@@ -8,6 +8,8 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { ContentComponent } from '../components/content/content.component';
 import { CastComponent } from '../components/cast/cast.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SlidesComponent } from '../components/slides/slides.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,10 @@ import { CastComponent } from '../components/cast/cast.component';
     FooterComponent,
     ContentComponent,
     CastComponent,
+    SlidesComponent,
   ],
-  imports: [CommonModule, RouterModule],
+
+  imports: [CommonModule, RouterModule, SlickCarouselModule],
   exports: [
     HomeComponent,
     DetailComponent,
@@ -28,6 +32,7 @@ import { CastComponent } from '../components/cast/cast.component';
     FooterComponent,
     ContentComponent,
     CastComponent,
+    SlidesComponent,
   ],
 })
 export class PagesModule {}
