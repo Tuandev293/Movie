@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MovieService } from 'src/app/Service/movie.service';
-import { Movie, MovieDetails } from 'src/app/models/Movie';
+import { MovieDetails } from 'src/app/models/Movie';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
