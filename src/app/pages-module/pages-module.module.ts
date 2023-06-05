@@ -10,6 +10,7 @@ import { ContentComponent } from '../components/content/content.component';
 import { CastComponent } from '../components/cast/cast.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SlidesComponent } from '../components/slides/slides.component';
+import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SlidesComponent } from '../components/slides/slides.component';
     FooterComponent,
     ContentComponent,
     CastComponent,
+    SpinnerComponent,
     SlidesComponent,
   ],
 
@@ -33,6 +35,7 @@ import { SlidesComponent } from '../components/slides/slides.component';
     ContentComponent,
     CastComponent,
     SlidesComponent,
+    SpinnerComponent,
   ],
 })
 export class PagesModule {}
