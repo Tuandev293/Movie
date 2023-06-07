@@ -15,31 +15,35 @@
       />
     </div>
     <div class="font-mono">
-      <h1 class="font-bold text-4xl mb-2">{{ movie.title }}</h1>
-      <p>Release Date: {{ movie.release_date }}</p>
-      <p class="mb-2">Thể loại: {{ movie.genres[0].name }}</p>
-      <p class="mb-2">
-        Overview:
+      <h1 class="font-bold text-4xl mb-2 line-clamp-1">{{ movie.title }}</h1>
+      <h2 class="font-bold text-xl">Release Date:</h2>
+      <p>{{ movie.release_date }}</p>
+      <h2 class="font-bold text-xl">Movie genres</h2>
+      <div class="flex gap-5">
+        <p class="mb-2" *ngFor="let item of movie.genres">{{ item.name }} |</p>
+      </div>
+      <h2 class="font-bold text-xl">Directed By:</h2>
+      <div class="flex gap-4 flex-wrap">
+        <p class="mb-2" *ngFor="let item of movie.production_companies">
+          {{ item.name }} |
+        </p>
+      </div>
+      <h2 class="font-bold text-xl">Production_companies:</h2>
+      <div class="flex gap-4">
+        <p class="mb-2" *ngFor="let item of movie.spoken_languages">
+          {{ item.name }} |
+        </p>
+      </div>
+      <h2 class="font-bold text-xl">Overview:</h2>
+      <p class="mb-2 line-clamp-2">
         {{ movie.overview }}
       </p>
-      <h2 class="font-bold text-lg">Directed By</h2>
-      <p class="mb-2">David Fincher</p>
-      <h2 class="font-bold text-lg">production_companies</h2>
-      <p class="mb-2">
-        {{ movie.spoken_languages[0].name }}
-      </p>
-      <h2 class="font-bold text-lg">Cast</h2>
-      <p>
-        Dierdre Downing Jackson, Van Quattro, Bennie E. Moore, Andi Carnick,
-        Charlie Dell, Robby Robinson, Rachel Singer, Tim De Zarn, Peter
-        Iacangelo, Richmond Arquette, Stuart Blumberg, Todd Peirce, Valerie
-        Bickford, Anderson Bourell, Christopher John Fields, Carl Ciarfalio,
-        Joon B. Kim, Lou Beatty Jr., Michael Shamus Wiles, Robert J. Stephenson,
-        Scotch Ellis Loring, Sydney Colston, Thom Gossom Jr., Tyrone R.
-        Livingston, W. Lauren Sanchez, David Lee Smith
-      </p>
+      <h2 class="font-bold text-xl">Vote_average</h2>
+      <p>{{ movie.vote_average }}</p>
+      <h2 class="font-bold text-xl">Vote_count</h2>
+      <p>{{ movie.vote_count }}</p>
       <button
-        class="w-40 bg-rose-700 h-9 rounded-md uppercase font-bold font-mono text-sm text-white"
+        class="w-40 bg-rose-700 h-11 rounded-md uppercase font-bold font-mono text-sm text-white"
       >
         <i class="fa-solid fa-circle-play"></i> Watch trailer
       </button>
@@ -47,13 +51,24 @@
   </div>
   <div class="mx-24 mb-32">
     <div class="flex justify-between mb-11">
-      <h1 class="font-bold font-mono text-4xl">Recommend Movies</h1>
+      <h1 class="font-bold font-mono text-4xl">Reviews Movies</h1>
       <p class="font-mono font-normal text-rose-700 text-lg">
         See more <i class="fa-solid fa-chevron-right"></i>
       </p>
     </div>
-    <div>
-      <app-cast></app-cast>
+    <div class="" *ngIf="review">
+      <app-reviews [review]="review"></app-reviews>
+    </div>
+  </div>
+  <div class="mx-24 mb-32">
+    <div class="flex justify-between mb-11">
+      <h1 class="font-bold font-mono text-4xl">Cast Movies</h1>
+      <p class="font-mono font-normal text-rose-700 text-lg">
+        See more <i class="fa-solid fa-chevron-right"></i>
+      </p>
+    </div>
+    <div class="" *ngIf="cast">
+      <app-cast [cast]="cast"></app-cast>
     </div>
   </div>
 </div>

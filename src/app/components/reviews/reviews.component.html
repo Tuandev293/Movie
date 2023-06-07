@@ -1,0 +1,10 @@
+<div class="flex justify-between flex-wrap">
+  <div
+    class="h-auto w-[30%] bg-white border border-gray-200 shadow dark:bg-gray-900 dark:border-gray-800 gap-4 mb-8 p-7 rounded-xl line-clamp-5"
+    *ngFor="let item of review.results"
+  >
+    <p class="font-bold text-xl mb-3">{{ item.author }}</p>
+    <p class="text-gray-400 mb-3">{{ item.created_at | date : "medium" }}</p>
+    <p class="">{{ item.content }}</p>
+  </div>
+</div>

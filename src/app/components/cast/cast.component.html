@@ -1,8 +1,10 @@
-<div class="w-64">
-  <img
-    src="../../../assets/image/cast.png"
-    alt=""
-    class="w-full h-96 object-cover mb-3"
-  />
-  <p class="font-sans font-bold text-lg text-gray-900">Keanu Reeves</p>
+<div class="w-full flex flex-wrap gap-3 justify-between text-center">
+  <div class="" *ngFor="let item of cast.cast">
+    <img
+      src="http://image.tmdb.org/t/p/w500/{{ item.profile_path }}"
+      alt=""
+      class="w-[200px] h-[200px] object-cover mb-3 rounded-full"
+    />
+    <p class="font-sans font-bold text-lg text-gray-900">{{ item.name }}</p>
+  </div>
 </div>

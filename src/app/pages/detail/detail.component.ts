@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MovieService } from 'src/app/Service/movie.service';
+import { CastMovie } from 'src/app/models/Cast';
 import { MovieDetails } from 'src/app/models/Movie';
+import { ReviewMovie } from 'src/app/models/Reviews';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -14,6 +16,8 @@ export class DetailComponent {
   ) {}
   movieServiceSubscription!: Subscription;
   movie!: MovieDetails;
+  cast!: CastMovie;
+  review!: ReviewMovie;
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
     console.log(id);
@@ -22,6 +26,19 @@ export class DetailComponent {
       .subscribe((movie) => {
         this.movie = movie;
         console.log(this.movie);
+      });
+    this.movieServiceSubscription = this.movieService
+      .getMovieCast(id)
+      .subscribe((cast) => {
+        this.cast = cast;
+        console.log(this.cast);
+      });
+
+    this.movieServiceSubscription = this.movieService
+      .getReviewMovie(id)
+      .subscribe((review) => {
+        this.review = review;
+        console.log(this.review);
       });
   }
   slidesBanner = {

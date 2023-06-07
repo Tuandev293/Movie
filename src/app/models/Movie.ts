@@ -11,6 +11,7 @@ export interface Movie {
   vote_average: number;
   backdrop_path: string;
   vote_count: string;
+  runtime: number;
 }
 export interface MovieDetails extends Movie {
   genres: [

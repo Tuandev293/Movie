@@ -11,6 +11,7 @@ import { CastComponent } from '../components/cast/cast.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SlidesComponent } from '../components/slides/slides.component';
 import { SpinnerComponent } from '../components/spinner/spinner.component';
+import { ReviewsComponent } from '../components/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SpinnerComponent } from '../components/spinner/spinner.component';
     CastComponent,
     SpinnerComponent,
     SlidesComponent,
+    ReviewsComponent,
   ],
 
   imports: [CommonModule, RouterModule, SlickCarouselModule],
@@ -36,6 +38,7 @@ import { SpinnerComponent } from '../components/spinner/spinner.component';
     CastComponent,
     SlidesComponent,
     SpinnerComponent,
+    ReviewsComponent,
   ],
 })
 export class PagesModule {}
