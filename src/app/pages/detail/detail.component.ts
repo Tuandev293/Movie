@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MovieService } from 'src/app/Service/movie.service';
-import { CastMovie } from 'src/app/models/Cast';
+import { Cast } from 'src/app/models/Cast';
 import { MovieDetails } from 'src/app/models/Movie';
 import { ReviewMovie } from 'src/app/models/Reviews';
 @Component({
@@ -16,7 +16,7 @@ export class DetailComponent {
   ) {}
   movieServiceSubscription!: Subscription;
   movie!: MovieDetails;
-  cast!: CastMovie;
+  cast!: Cast[];
   review!: ReviewMovie;
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
@@ -29,8 +29,8 @@ export class DetailComponent {
       });
     this.movieServiceSubscription = this.movieService
       .getMovieCast(id)
-      .subscribe((cast) => {
-        this.cast = cast;
+      .subscribe(({ cast }) => {
+        this.cast = cast.splice(0, 12);
         console.log(this.cast);
       });
 

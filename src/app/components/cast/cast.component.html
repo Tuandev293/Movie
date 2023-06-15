@@ -1,7 +1,8 @@
 <div class="w-full flex flex-wrap gap-3 justify-between text-center">
-  <div class="" *ngFor="let item of cast.cast">
+  <div class="" *ngFor="let item of cast">
     <img
       src="http://image.tmdb.org/t/p/w500/{{ item.profile_path }}"
+      onerror="this.src='https://source.unsplash.com/random'"
       alt=""
       class="w-[200px] h-[200px] object-cover mb-3 rounded-full"
     />
