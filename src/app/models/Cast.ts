@@ -1,8 +1,4 @@
-export interface CastMovie {
-  cast: [
-    {
-      name: string;
-      profile_path: string;
-    }
-  ];
+export interface Cast {
+  name: string;
+  profile_path: string;
 }
